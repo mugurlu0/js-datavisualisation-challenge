@@ -61,8 +61,8 @@ for (var o = 0; o < table1Years.length; o++) {
 }
 var canvaTable1 = document.createElement("canvas");
 canvaTable1.id = "table1Chart";
-var insertTable1 = document.getElementsByTagName("h3");
-insertTable1[0].appendChild(canvaTable1);
+document.querySelectorAll("h3")[0].appendChild(canvaTable1);
+
 
 var ctx = document.getElementById('table1Chart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -119,11 +119,7 @@ for (var o = 0; o < table2Years.length; o++) {
 }
 var canvaTable2 = document.createElement("canvas");
 canvaTable2.id = "table2Chart";
-var insertTable2 = document.getElementsByTagName("h4");
-insertTable2[2].appendChild(canvaTable2);
-var space = document.createTextNode("<br>");
-canvaTable2.appendChild(space);
-
+document.querySelectorAll("h4")[2].appendChild(canvaTable2);
 
 var ctx2 = document.getElementById('table2Chart').getContext('2d');
 var myChart2 = new Chart(ctx2, {
@@ -136,8 +132,7 @@ var myChart2 = new Chart(ctx2, {
 
 (() => {
   var canvas = document.createElement("canvas");
-  var insertCanvas = document.getElementsByTagName("h1");
-  insertCanvas[0].appendChild(canvas);
+  document.querySelectorAll("h1")[0].appendChild(canvas);
   var xhr = new XMLHttpRequest();
   var ajaxNames = new Array;
   var ajaxData = new Array;
@@ -178,7 +173,7 @@ var myChart2 = new Chart(ctx2, {
       updateChart();
     }
   }
-  xhr.open("GET", "https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10", true);
+  xhr.open("GET", "https://canvasjs.com/services/data/datapoints.php?xstart=0&ystart=10&length=20", true);
   xhr.responseType = "json";
   xhr.send();
 
@@ -194,7 +189,7 @@ var myChart2 = new Chart(ctx2, {
     setTimeout(function () {
       updateChart()
     }, 1000);
-    xhr.open("GET", "https://canvasjs.com/services/data/datapoints.php?xstart=" + (ajaxNames.length + 1) + "&ystart=&length=20&type=json", true);
+    xhr.open("GET","https://canvasjs.com/services/data/datapoints.php?xstart=" + (ajaxNames.length + 1) + "&ystart=&length+=" + 1 + "&type=json", true);
     xhr.responseType = "json";
     xhr.send();
   }

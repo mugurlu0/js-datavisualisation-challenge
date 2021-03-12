@@ -112,7 +112,7 @@ for (let o = 0; o < table2Years.length; o++) {
   table2Dataset.push({
     label: table2Years[o],
     data: table2Data[o],
-    backgroundColor: randomColor(),
+    borderColor: randomColor(),
     hoverBackgroundColor: "rgba(232,105,90,0.8)",
     hoverBorderColor: "red",
     fill: false
